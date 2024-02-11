@@ -22,9 +22,9 @@ function validateForm() {
         return;
     }
 
-    if (password !== confirmPassword) {
-        alert("Passwords do not match.");
-        return;
+    if (password.length < 8 || !/[A-Z]/.test(password) || !/\d/.test(password)) {
+            alert("Password must be at least 8 characters long and contain at least one capital letter and one number.");
+            return false;
     }
 
     var verificationCode = prompt("Verification Code sent to your email. Enter code:");
