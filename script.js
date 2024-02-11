@@ -51,4 +51,14 @@ function validateForm() {
     if (attempts === maxAttempts) {
         alert("Maximum attempts reached. Please try again later.");
     }
+
+    function togglePasswordVisibility() {
+        var passwordInput = document.getElementById("password");
+        var confirmPasswordInput = document.getElementById("confirmPassword");
+
+        // Toggle password visibility based on the current type
+        var type = passwordInput.type === "password" ? "text" : "password";
+        passwordInput.type = type;
+        confirmPasswordInput.type = type;
+    }
 }
