@@ -27,9 +27,15 @@ function validateForm() {
             return false;
     }
 
+    var sentVerificationCode = "123456"; // Replace with tcode sent to user's email
+    
     var verificationCode = prompt("Verification Code sent to your email. Enter code:");
-
-    if (verificationCode) {
-        alert("Signup Successful. Please proceed to login.");
+    
+    if (!verificationCode) {
+        alert("Please Enter Your Verification Code");
+    } else if (verificationCode !== sentVerificationCode) {
+        alert("Incorrect Code, Please Try Again");
+    } else {
+        alert("Signup Successful. Please Proceed to Login");
     }
 }
