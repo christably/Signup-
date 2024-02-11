@@ -40,10 +40,16 @@ button {
     width: 100%;
 }
 
+input[type="password"] {
+    width: calc(100% - 28px); /* Adjusted width to make space for the eye icon */
+    padding-right: 28px; /* Added padding on the right to make space for the eye icon */
+}
+
 .eye-icon {
     position: absolute;
     top: 50%;
     right: 10px;
     cursor: pointer;
     transform: translateY(-50%);
+    z-index: 1;
 }
