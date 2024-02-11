@@ -30,8 +30,13 @@
         </select>
 
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" pattern="^(?=.*[A-Z])(?=.*\d).{8,}$" required>
-        <small>Password must have at least one capital letter.</small>
+        <div style="position: relative;">
+            <input type="password" id="password" name="password" pattern="^(?=.*[A-Z])(?=.*\d).{8,}$" required>
+            <span class="eye-icon" onclick="togglePasswordVisibility()">
+                <!-- Unicode for an open eye icon -->
+                &#128065;
+            </span>
+        </div>
 
         <label for="confirmPassword">Confirm Password:</label>
         <input type="password" id="confirmPassword" name="confirmPassword" required>
