@@ -39,3 +39,11 @@ button {
     cursor: pointer;
     width: 100%;
 }
+
+.eye-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
