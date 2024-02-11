@@ -27,15 +27,28 @@ function validateForm() {
             return false;
     }
 
-    var sentVerificationCode = "123456"; // Replace with tcode sent to user's email
+    var sentVerificationCode = "123456"; // Replace with actual code sent to user's email
     
-    var verificationCode = prompt("Verification Code sent to your email. Enter code:");
+    // Initialize attempts counter
+    var attempts = 0;
+    var maxAttempts = 3;
     
-    if (!verificationCode) {
-        alert("Please Enter Your Verification Code");
-    } else if (verificationCode !== sentVerificationCode) {
-        alert("Incorrect Code, Please Try Again");
-    } else {
-        alert("Signup Successful. Please Proceed to Login");
+    do {
+        var verificationCode = prompt("Verification Code sent to your email. Enter code:");
+        
+        if (!verificationCode) {
+            alert("Please Enter Your Verification Code");
+        } else if (verificationCode !== sentVerificationCode) {
+            alert("Incorrect Code, Please Try Again");
+            attempts++;
+        } else {
+            alert("Signup Successful. Please Proceed to Login");
+            break; // Exit the loop if the verification code is correct
+        }
+    
+    } while (attempts < maxAttempts);
+    
+    if (attempts === maxAttempts) {
+        alert("Maximum attempts reached. Please try again later.");
     }
 }
