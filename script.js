@@ -103,7 +103,6 @@ async function validateLoginForm() {
 function togglePasswordVisibility() {
     var passwordInput = document.getElementById("password");
     var confirmPasswordInput = document.getElementById("confirmPassword");
-    var eyeIcon = document.querySelector(".eye-icon");
 
     // Toggle password visibility based on the current type
     var type = passwordInput.type === "password" ? "text" : "password";
