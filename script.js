@@ -102,7 +102,7 @@ async function validateLoginForm() {
 }
 
 function togglePasswordVisibility() {
-    var passwordInput = document.getElementById("password");
+    var passwordInput = document.getElementById("password") || document.getElementById("loginPassword");
     var confirmPasswordInput = document.getElementById("confirmPassword");
     var eyeIcon = document.querySelector('.eye-icon');
 
