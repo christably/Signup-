@@ -52,7 +52,13 @@
         <input type="text" id="loginUsernameEmail" name="loginUsernameEmail" required>
 
         <label for="loginPassword">Password:</label>
-        <input type="password" id="loginPassword" name="loginPassword" required>
+        <div style="position: relative;">
+            <input type="password" id="loginPassword" name="loginPassword" required>
+            <span class="eye-icon" onclick="togglePasswordVisibility()">
+                <!-- Unicode for an open eye icon -->
+                &#128065;
+            </span>
+        </div>
 
         <button type="button" onclick="validateLoginForm()">Login</button>
     </form>
