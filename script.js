@@ -1,3 +1,13 @@
+function showSignUpForm() {
+    document.getElementById("signupForm").style.display = "block";
+    document.getElementById("loginForm").style.display = "none";
+}
+
+function showLoginForm() {
+    document.getElementById("signupForm").style.display = "none";
+    document.getElementById("loginForm").style.display = "block";
+}
+
 function validateForm() {
     var firstName = document.getElementById("firstName").value;
     var lastName = document.getElementById("lastName").value;
