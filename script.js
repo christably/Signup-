@@ -72,3 +72,35 @@ function validateForm() {
         confirmPasswordInput.type = type;
     }
 }
+
+async function validateLoginForm() {
+    // Retrieve values from the login form
+    var usernameOrEmail = document.getElementById("loginUsernameEmail").value;
+    var password = document.getElementById("loginPassword").value;
+
+    // Check if all fields are filled
+    if (!usernameOrEmail || !password) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    // Validate email format
+    if (!isValidEmailOrUsername(usernameOrEmail)) {
+        alert("Invalid Detail");
+        return;
+    }
+
+    // Validate password format
+    if (!isValidPassword(password)) {
+        alert("Invalid Detail");
+        return;
+    }
+
+    // If client-side validation passes, send data to the server for authentication
+    if (await serverSideAuthentication(usernameOrEmail, password)) {
+        alert("Login successful! Redirecting...");
+        // Add further actions like redirecting to a dashboard
+    } else {
+        alert("Incorrect details. Please try again.");
+    }
+}
