@@ -8,7 +8,7 @@ function showLoginForm() {
     document.getElementById("loginForm").style.display = "block";
 }
 
-function validateForm() {
+function validateSignUpForm() {
     var firstName = document.getElementById("firstName").value;
     var lastName = document.getElementById("lastName").value;
     var email = document.getElementById("email").value;
@@ -66,16 +66,6 @@ function validateForm() {
     if (attempts === maxAttempts) {
         alert("Maximum attempts reached. Please try again later.");
     }
-
-    function togglePasswordVisibility() {
-        var passwordInput = document.getElementById("password");
-        var confirmPasswordInput = document.getElementById("confirmPassword");
-
-        // Toggle password visibility based on the current type
-        var type = passwordInput.type === "password" ? "text" : "password";
-        passwordInput.type = type;
-        confirmPasswordInput.type = type;
-    }
 }
 
 async function validateLoginForm() {
@@ -107,5 +97,16 @@ async function validateLoginForm() {
         // Add further actions like redirecting to a dashboard
     } else {
         alert("Incorrect details. Please try again.");
+    }
+}
+
+function togglePasswordVisibility() {
+        var passwordInput = document.getElementById("password");
+        var confirmPasswordInput = document.getElementById("confirmPassword");
+
+        // Toggle password visibility based on the current type
+        var type = passwordInput.type === "password" ? "text" : "password";
+        passwordInput.type = type;
+        confirmPasswordInput.type = type;
     }
 }
