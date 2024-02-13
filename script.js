@@ -101,12 +101,15 @@ async function validateLoginForm() {
 }
 
 function togglePasswordVisibility() {
-        var passwordInput = document.getElementById("password");
-        var confirmPasswordInput = document.getElementById("confirmPassword");
+    var passwordInput = document.getElementById("password");
+    var confirmPasswordInput = document.getElementById("confirmPassword");
+    var eyeIcon = document.querySelector(".eye-icon");
 
-        // Toggle password visibility based on the current type
-        var type = passwordInput.type === "password" ? "text" : "password";
-        passwordInput.type = type;
-        confirmPasswordInput.type = type;
-    }
+    // Toggle password visibility based on the current type
+    var type = passwordInput.type === "password" ? "text" : "password";
+    passwordInput.type = type;
+    confirmPasswordInput.type = type;
+
+    // Change the eye icon based on the visibility state
+    eyeIcon.innerHTML = type === "password" ? "👁️" : "👁️‍🗨️";
 }
