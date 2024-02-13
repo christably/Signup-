@@ -37,6 +37,11 @@ function validateForm() {
             return false;
     }
 
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+    }
+
     var sentVerificationCode = "123456"; // Replace with actual code sent to user's email
     
     // Initialize attempts counter
