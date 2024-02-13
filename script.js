@@ -102,11 +102,16 @@ async function validateLoginForm() {
 }
 
 function togglePasswordVisibility() {
-    var passwordInput = document.getElementById("password") || document.getElementById("loginPassword");
+    var passwordInput = document.querySelector('#password, #loginPassword');
     var confirmPasswordInput = document.getElementById("confirmPassword");
+    if (!passwordInput) {
+        console.error("Password input not found.");
+        return;
+    }
+    
     var eyeIcon = document.querySelector('.eye-icon');
-
     var type = passwordInput.type === "password" ? "text" : "password";
+    
     passwordInput.type = type;
     confirmPasswordInput.type = type;
 
